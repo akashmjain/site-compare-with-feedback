@@ -6,15 +6,6 @@ const router = express.Router();
 
 
 
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://admin:<password>@cluster0.aoba4.mongodb.net/<dbname>?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
-
 
 // get comments
 router.get('/',async (req, res) => {
@@ -27,8 +18,10 @@ router.post('/', async (req, res) => {
     const comments = await loaCommentsCollection();
     await comments.insertOne({
         product_key: req.body.product_key,
-        msg: req.body.msg,
-        rating: req.body.rating,
+        comment: req.body.comment,
+        product_rating: req.body.product_rating,
+        user_name: req.body.user_name,
+        merchant_website: req.body.merchant_website,
         createdAt: new Date(),
     });
     res.status(201).send();
@@ -43,7 +36,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 
-
+// here this will have connection to database
 async function loaCommentsCollection() {
     const mongodb_url = 'mongodb+srv://admin:qwerty@123@cluster0.fdguj.mongodb.net/<dbname>?retryWrites=true&w=majority';
     const client = await mongodb.MongoClient.connect(mongodb_url, {
