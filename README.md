@@ -5,3 +5,8 @@ programm in a one weak time, hence further advancment are not done, and refactor
 criteria presented in internship, the built time for this project was around 10 days.
 
 
+# output screenshots
+
+<p align="center">
+  <img width="500" height="500" src="resources/search_result.png">
+</p>
