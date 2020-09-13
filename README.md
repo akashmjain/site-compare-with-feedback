@@ -8,5 +8,6 @@ criteria presented in internship, the built time for this project was around 10 
 # output screenshots
 
 <p align="center">
-  <img width="500" height="500" src="resources/search_result.png">
+  <img width="200" height="200" src="resources/search.png">
+  <img width="200" height="200" src="resources/product_desc.png">
 </p>
